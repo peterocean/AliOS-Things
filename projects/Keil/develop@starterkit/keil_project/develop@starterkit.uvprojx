@@ -12,16 +12,16 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32L433RCTx</Device>
+          <Device>STM32L496VGTx</Device>
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32L4xx_DFP.2.1.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
-          <Cpu>IRAM(0x20000000,0x00018000) IRAM2(0x10000000,0x00008000) IROM(0x08000000,0x00100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IROM(0x08000000,0x00100000) IRAM(0x20000000,0x00040000) IRAM2(0x10000000,0x00010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32L433RCTx$CMSIS\Flash\STM32L4xx_1024.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32L496VGTx$CMSIS/Flash/STM32L4xx_1024.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32L433RCTx$Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h</RegisterFile>
+          <RegisterFile>$$Device:STM32L496VGTx$Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -31,7 +31,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32L433RCTx$CMSIS\SVD\STM32L4x5.svd</SFDFile>
+          <SFDFile>$$Device:STM32L496VGTx$CMSIS/SVD/STM32L4x6.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -147,7 +147,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>11</TargetSelection>
+          <TargetSelection>1</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -161,7 +161,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
+            <Driver>BIN\UL2CM3.DLL</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -175,7 +175,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -228,7 +228,7 @@
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <RoSelD>3</RoSelD>
-            <RwSelD>4</RwSelD>
+            <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
@@ -280,7 +280,7 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x18000</Size>
+                <Size>0x40000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
@@ -335,12 +335,12 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x18000</Size>
+                <Size>0x40000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
                 <StartAddress>0x10000000</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x10000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -363,9 +363,9 @@
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>STM32L496xx,USE_HAL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\..\..\..\platform\mcu\stm32l4xx_cube\Drivers\CMSIS\Device\ST\STM32L4xx\Include;..\..\..\..\platform\mcu\stm32f4xx_cube\Drivers\STM32F4xx_HAL_Driver\Inc;..\..\..\..\platform\mcu\stm32l4xx_cube\hal;..\..\..\..\board\stm32l496vg-aliosthings_develop\Inc;..\..\..\..\kernel\rhino\hal\soc;..\..\..\..\osal\include\aos</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -484,7 +484,7 @@
               <RVCTZI>0</RVCTZI>
               <RVCTOtherData>0</RVCTOtherData>
               <ModuleSelection>0</ModuleSelection>
-              <IncludeInBuild>1</IncludeInBuild>
+              <IncludeInBuild>0</IncludeInBuild>
               <AlwaysBuild>0</AlwaysBuild>
               <GenerateAssemblyFile>0</GenerateAssemblyFile>
               <AssembleAssemblyFile>0</AssembleAssemblyFile>
@@ -2867,6 +2867,41 @@
               <FileName>atparser.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../././network/sal/atparser/atparser.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>alios_things_developer</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32l4xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\Src\stm32l4xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\Src\stm32l4xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_stm32l496xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\startup_stm32l496xx.s</FilePath>
+            </File>
+            <File>
+              <FileName>board.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\aos\board.h</FilePath>
+            </File>
+            <File>
+              <FileName>board_partition.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\aos\board_partition.c</FilePath>
+            </File>
+            <File>
+              <FileName>soc_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\board\stm32l496vg-aliosthings_develop\aos\soc_init.c</FilePath>
             </File>
           </Files>
         </Group>

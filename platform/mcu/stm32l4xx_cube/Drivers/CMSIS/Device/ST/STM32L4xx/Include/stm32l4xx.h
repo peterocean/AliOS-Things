@@ -91,7 +91,7 @@
   /* #define STM32L476xx */   /*!< STM32L476xx Devices */
   /* #define STM32L485xx */   /*!< STM32L485xx Devices */
   /* #define STM32L486xx */   /*!< STM32L486xx Devices */
-  /* #define STM32L496xx */   /*!< STM32L496xx Devices */
+  #define STM32L496xx    		/*!< STM32L496xx Devices */
   /* #define STM32L4A6xx */   /*!< STM32L4A6xx Devices */
   /* #define STM32L4R5xx */   /*!< STM32L4R5xx Devices */
   /* #define STM32L4R7xx */   /*!< STM32L4R7xx Devices */
@@ -137,8 +137,8 @@
   #include "stm32l431xx.h"
 #elif defined(STM32L432xx)
   #include "stm32l432xx.h"
-#elif defined(STM32L433xx)
-  #include "stm32l433xx.h"
+//#elif defined(STM32L433xx)
+  //#include "stm32l433xx.h"
 #elif defined(STM32L442xx)
   #include "stm32l442xx.h"
 #elif defined(STM32L443xx)
