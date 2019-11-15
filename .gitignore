@@ -46,4 +46,5 @@ projects/autogen/*
 .DS_Store
 
 #keil mdk 5.14
-*.opts
+*.*_opts
+*.dbgconf
